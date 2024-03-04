@@ -3,7 +3,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
 
-
 # Load Data
 hour_df = pd.read_csv("all_data.csv")
 
@@ -27,11 +26,12 @@ sns.despine(top=True, right=True, left=False, bottom=False)
 
 # Adding labels to the boxplot
 for box in ax.artists:
-    box_coords = [(box.get_xdata()[j], box.get_ydata()[j]) for j in range(len(box.get_xdata()))]
-    box_height = box_coords[3][1] - box_coords[0][1]
-    median_x = box_coords[2][0]
-    ax.text(median_x, box_coords[0][1] + box_height * 0.5, f"{int(box.get_height())}",
-            va='center', ha='center', fontsize=10)
+    if len(box.get_xdata()) > 0:
+        box_coords = [(box.get_xdata()[j], box.get_ydata()[j]) for j in range(len(box.get_xdata()))]
+        box_height = box_coords[3][1] - box_coords[0][1]
+        median_x = box_coords[2][0]
+        ax.text(median_x, box_coords[0][1] + box_height * 0.5, f"{int(box.get_height())}",
+                va='center', ha='center', fontsize=10)
 
 st.pyplot(plt)
 
