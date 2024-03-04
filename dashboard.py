@@ -26,8 +26,7 @@ plt.title('Distribusi Penyewaan Sepeda per Jam')
 sns.despine(top=True, right=True, left=False, bottom=False)
 
 # Adding labels to the boxplot
-for i in range(len(ax.artists)):
-    box = ax.artists[i]
+for box in ax.artists:
     box_coords = [(box.get_xdata()[j], box.get_ydata()[j]) for j in range(5)]
     box_height = box_coords[3][1] - box_coords[0][1]
     median_x = box_coords[2][0]
