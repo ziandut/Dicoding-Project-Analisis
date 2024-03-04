@@ -25,16 +25,6 @@ ax = sns.boxplot(x='hr', y='cnt', data=hour_df)
 plt.title('Distribusi Penyewaan Sepeda per Jam')
 sns.despine(top=True, right=True, left=False, bottom=False)
 
-# Adding labels to the boxplot
-for line in ax.lines:
-    x_data = line.get_xdata()
-    y_data = line.get_ydata()
-    if len(x_data) > 0:  # Ensure there is data in the line
-        median_x = x_data[0]  # Median line's x-coordinate
-        median_y = y_data[0]  # Median line's y-coordinate
-        ax.text(median_x, median_y, f"{int(median_y)}",
-                va='center', ha='center', fontsize=10)
-
 st.pyplot(plt)
 
 # 2. Distribusi Penyewaan Sepeda per Minggu
