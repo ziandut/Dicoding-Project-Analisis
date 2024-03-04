@@ -26,7 +26,7 @@ sns.despine(top=True, right=True, left=False, bottom=False)
 
 # Adding labels to the boxplot
 for box in ax.artists:
-    if len(box.get_xdata()) > 0:
+    if box.get_xdata() is not None and len(box.get_xdata()) > 0:
         box_coords = [(box.get_xdata()[j], box.get_ydata()[j]) for j in range(len(box.get_xdata()))]
         box_height = box_coords[3][1] - box_coords[0][1]
         median_x = box_coords[2][0]
