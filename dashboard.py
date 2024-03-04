@@ -52,7 +52,7 @@ st.subheader("Penggunaan Sepeda Dalam Satu Tahun Berdasarkan Musim")
 
 #  Visualisasi
 plt.figure(figsize=(12, 6))
-bar = sns.barplot(data=hour_df, x="season", y="cnt", hue="yr", palette="rocket", errorbar=None)
+bar = sns.barplot(data=hour_df, x="season", y="cnt", hue="yr", palette="rocket")
 sns.despine(top=True, right=True, left=False, bottom=False)
 
 plt.ylabel('Count of rents')
