@@ -5,7 +5,7 @@ import streamlit as st
 
 
 # Load Data
-hour_df = pd.read_csv("E:/DICODING PROJECT/all_data.csv")
+hour_df = pd.read_csv("all_data.csv")
 
 #Sidebar with author information
 st.sidebar.header("Author Information")
